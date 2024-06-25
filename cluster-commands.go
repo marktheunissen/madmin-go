@@ -433,6 +433,7 @@ const (
 	SRBucketMetaTypeSSEConfig        = "sse-config"
 	SRBucketMetaTypeQuotaConfig      = "quota-config"
 	SRBucketMetaLCConfig             = "lc-config"
+	SRBucketMetaTypeCors             = "cors-config"
 )
 
 // SRBucketMeta - represents a bucket metadata change that will be copied to a peer.
@@ -469,6 +470,9 @@ type SRBucketMeta struct {
 
 	// ExpiryUpdatedAt - timestamp of last update of expiry rule
 	ExpiryUpdatedAt time.Time `json:"expiryUpdatedAt,omitempty"`
+
+	// Cors is base64 XML representation of CORS config
+	Cors *string `json:"cors,omitempty"`
 }
 
 // SRPeerReplicateBucketMeta - copies a bucket metadata change to a peer cluster.
@@ -540,6 +544,7 @@ type SRBucketInfo struct {
 	ExpiryLCConfigUpdatedAt    time.Time `json:"expLCTimestamp,omitempty"`
 	CreatedAt                  time.Time `json:"bucketTimestamp,omitempty"`
 	DeletedAt                  time.Time `json:"bucketDeletedTimestamp,omitempty"`
+	CorsConfigUpdatedAt        time.Time `json:"corsTimestamp,omitempty"`
 	Location                   string    `json:"location,omitempty"`
 }
 
