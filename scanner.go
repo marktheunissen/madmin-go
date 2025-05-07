@@ -28,6 +28,7 @@ import (
 )
 
 //msgp:clearomitted
+//msgp:timezone utc
 //go:generate msgp
 
 // BucketScanInfo contains information of a bucket scan in a given pool/set

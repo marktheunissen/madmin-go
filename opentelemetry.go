@@ -27,9 +27,9 @@ import (
 	"github.com/minio/madmin-go/v3/estream"
 )
 
-//go:generate msgp $GOFILE
-
 //msgp:replace TraceType with:uint64
+//msgp:timezone utc
+//go:generate msgp $GOFILE
 
 // ServiceTelemetryOpts is a request to add following types to tracing.
 type ServiceTelemetryOpts struct {

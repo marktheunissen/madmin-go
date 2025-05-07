@@ -30,6 +30,7 @@ import (
 
 //msgp:clearomitted
 //msgp:tag json
+//msgp:timezone utc
 //go:generate msgp
 
 // BackendType - represents different backend types.

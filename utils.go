@@ -32,6 +32,7 @@ import (
 
 //msgp:clearomitted
 //msgp:tag json
+//msgp:timezone utc
 //go:generate msgp
 
 // AdminAPIVersion - admin api version used in the request.

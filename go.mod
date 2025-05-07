@@ -4,6 +4,8 @@ go 1.24.0
 
 toolchain go1.24.2
 
+replace github.com/tinylib/msgp v1.2.5 => github.com/klauspost/msgp v1.1.6-0.20250506154734-b646eabda3d7
+
 require (
 	github.com/cespare/xxhash/v2 v2.3.0
 	github.com/dustin/go-humanize v1.0.1

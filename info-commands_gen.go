@@ -2104,7 +2104,7 @@ func (z *DataUsageInfo) DecodeMsg(dc *msgp.Reader) (err error) {
 		}
 		switch msgp.UnsafeString(field) {
 		case "lastUpdate":
-			z.LastUpdate, err = dc.ReadTime()
+			z.LastUpdate, err = dc.ReadTimeUTC()
 			if err != nil {
 				err = msgp.WrapError(err, "LastUpdate")
 				return
@@ -2644,7 +2644,7 @@ func (z *DataUsageInfo) UnmarshalMsg(bts []byte) (o []byte, err error) {
 		}
 		switch msgp.UnsafeString(field) {
 		case "lastUpdate":
-			z.LastUpdate, bts, err = msgp.ReadTimeBytes(bts)
+			z.LastUpdate, bts, err = msgp.ReadTimeUTCBytes(bts)
 			if err != nil {
 				err = msgp.WrapError(err, "LastUpdate")
 				return
@@ -5873,7 +5873,7 @@ func (z *GCStats) DecodeMsg(dc *msgp.Reader) (err error) {
 		}
 		switch msgp.UnsafeString(field) {
 		case "last_gc":
-			z.LastGC, err = dc.ReadTime()
+			z.LastGC, err = dc.ReadTimeUTC()
 			if err != nil {
 				err = msgp.WrapError(err, "LastGC")
 				return
@@ -5922,7 +5922,7 @@ func (z *GCStats) DecodeMsg(dc *msgp.Reader) (err error) {
 				z.PauseEnd = make([]time.Time, zb0003)
 			}
 			for za0002 := range z.PauseEnd {
-				z.PauseEnd[za0002], err = dc.ReadTime()
+				z.PauseEnd[za0002], err = dc.ReadTimeUTC()
 				if err != nil {
 					err = msgp.WrapError(err, "PauseEnd", za0002)
 					return
@@ -6056,7 +6056,7 @@ func (z *GCStats) UnmarshalMsg(bts []byte) (o []byte, err error) {
 		}
 		switch msgp.UnsafeString(field) {
 		case "last_gc":
-			z.LastGC, bts, err = msgp.ReadTimeBytes(bts)
+			z.LastGC, bts, err = msgp.ReadTimeUTCBytes(bts)
 			if err != nil {
 				err = msgp.WrapError(err, "LastGC")
 				return
@@ -6105,7 +6105,7 @@ func (z *GCStats) UnmarshalMsg(bts []byte) (o []byte, err error) {
 				z.PauseEnd = make([]time.Time, zb0003)
 			}
 			for za0002 := range z.PauseEnd {
-				z.PauseEnd[za0002], bts, err = msgp.ReadTimeBytes(bts)
+				z.PauseEnd[za0002], bts, err = msgp.ReadTimeUTCBytes(bts)
 				if err != nil {
 					err = msgp.WrapError(err, "PauseEnd", za0002)
 					return
